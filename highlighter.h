@@ -64,7 +64,10 @@ private:
 
   // Language support
   QStringList compiled_languages;
-  QStrin
+  QStringList scripting_languages;
+  QStringList markup_languages;
+
+  // Highlighter
 
 
 
