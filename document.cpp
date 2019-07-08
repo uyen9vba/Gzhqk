@@ -1,4 +1,3 @@
-
 #include "document.h"
 
 #include <algorithm>
@@ -12,9 +11,6 @@ public:
 
 
 private:
-  QString file_name;
-  QString theme;
-  QString current_directory;
 
 
 };

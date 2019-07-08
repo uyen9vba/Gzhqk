@@ -12,8 +12,10 @@ namespace src {
 class Document
 {
 public:
+  Document();
   ~Document();
 
+private:
   // Operators
   bool operator==(const doc_id& id) const;
   bool operator!=(const doc_id& id) const;
@@ -47,10 +49,11 @@ public:
 
   // File control
   void save();
-  void open(const QString& filename);
+  void open(const QString& file_name);
   QString get_file_type(QString& file);
 
   // Document identification and metadata
+  // Draft means unsaved document
   void create_new(const QSettings& settings);
   void set_document(const doc_id& id);
   doc_id get_document() const;
@@ -63,11 +66,10 @@ public:
   int get_version_count() const;
   int get_version_length(const doc_id& id) const;
 
-
-
-
-
-
+  // Data
+  QString file_name;
+  QString file_type;
+  QString current_directory;
 
 };
 

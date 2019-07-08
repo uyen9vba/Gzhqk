@@ -7,9 +7,12 @@ namespace cmp {
   class Files;
 }
 
-class Files {
+class Files
+{
 public:
   Files();
+
+  // File control
   QString read(QString filename);
   void write(QString filename, QString content);
   QString get_home_directory();
