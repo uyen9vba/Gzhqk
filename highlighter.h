@@ -68,7 +68,19 @@ private:
   QStringList markup_languages;
 
   // Highlighter
-
+  QColor keyword_color;
+  QColor keyword_color2;
+  QColor functions_color;
+  QColor value_color;
+  QColor number_color;
+  QColor operator_color;
+  QColor string_color;
+  QColor comment_color;
+  QColor variable_color;
+  QColor tab_color;
+  QColor html_attribute_color;
+  QColor css_classes_ids_color;
+  QColor css_attribute_color;
 
 
 
