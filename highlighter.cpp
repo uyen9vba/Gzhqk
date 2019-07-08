@@ -41,5 +41,12 @@ public:
   }
 
   // --------------------------------------------------
+  void set_theme(QString file_type, QString theme)
+  {
+    setup_highlighter(file_type, theme);
+    rehighlight();
+  }
+
+  // --------------------------------------------------
 
 };

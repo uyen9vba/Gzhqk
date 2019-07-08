@@ -24,17 +24,16 @@ private:
   void set_asm_rules();
   void set_css_rules();
   void set_sql_rules();
-
-
   void highlight_block(const QString& text);
 
+
+  // Data
   struct Highlighter_rule
   {
     QRegExp pattern;
     QTextCharFormat format;
   };
 
-  // Data
   QVector<Highlighter_rule> highlighting_rules
 
   // Expression
@@ -81,7 +80,4 @@ private:
   QColor html_attribute_color;
   QColor css_classes_ids_color;
   QColor css_attribute_color;
-
-
-
 };
