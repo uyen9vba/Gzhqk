@@ -48,5 +48,24 @@ public:
   }
 
   // --------------------------------------------------
+  void set_compiled_language_rules()
+  {
+    Highlighter_rule rule;
+
+
+  }
+
+  // --------------------------------------------------
+  void set_asm_rules()
+  {
+    // Instance the rule struct
+    Highlighter_rule rule;
+
+    // Function formatting
+    function.setForeground(functions_color);
+    rule.pattern = QRegExp("\\b[A-Za-z0-9_<>-@]+:");
+    rule.format = function;
+    
+  }
 
 };
