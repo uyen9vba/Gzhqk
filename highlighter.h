@@ -18,6 +18,7 @@ private:
   // Syntax loading
   void setup_highlighter(QString file_type, QString theme);
   void set_color_values(QString theme);
+  void set_theme(QString file_type, QString theme);
   void set_compiled_language_rules();
   void set_scripting_language_rules();
   void set_markup_language_rules();
