@@ -1,6 +1,10 @@
 #ifndef DOCUMENT_H
 #define DOCUMENT_H
 
+#include <string>
+#include <string_view>
+#include <algorithm>
+
 #include <QApplication>
 #include <QMainWindow>
 #include <QSettings>
@@ -12,8 +16,8 @@ namespace src {
 class Document
 {
 public:
-  Document();
-  ~Document();
+  explicit Document(QWidget* parent = nullptr);
+  virtual ~Document() = default;
 
 private:
   // Operators
@@ -30,6 +34,26 @@ private:
   bool close();
   bool commit();
   bool commit(const QString& label, const QString& desc);
+  
+
+  // File control
+  void save();
+  void open(QString file_name);
+  QString get_file_type(QString file_name);
+  void set_file_path(const QString& file_path);
+
+  // Document identification and metadata
+  void create_new(const QSettings& settings);
+  void set_document(const doc_id& id);
+  doc_id get_document() const;
+  doc_id get_parent() const;
+  doc_id get_draft_parent() const;
+  doc_id get_draft_parent(int version_id) const;
+  bool is_draft_attached() const;
+  int get_document_id() const;
+  int get_version_id() const;
+  int get_version_count() const;
+  int get_version_length(const doc_id& id) const;
 
   // Text processing
   QString get_text() const;
@@ -47,26 +71,12 @@ private:
   unsigned get_line_start(unsigned pos) const;
   unsigned get_line_end(unsigned pos) const;
 
-  // File control
-  void save();
-  void open(const QString& file_name);
-  QString get_file_type(QString& file);
+  // Indentation 
+  bool is_auto_indentation_enabled() const;
+  void set_auto_indentation_enabled(bool auto_indentation_enabled);
 
-  // Document identification and metadata
-  // Draft means unsaved document
-  void create_new(const QSettings& settings);
-  void set_document(const doc_id& id);
-  doc_id get_document() const;
-  doc_id get_parent() const;
-  doc_id get_draft_parent() const;
-  doc_id get_draft_parent(int version_id) const;
-  bool is_draft_attached() const;
-  int get_document_id() const;
-  int get_version_id() const;
-  int get_version_count() const;
-  int get_version_length(const doc_id& id) const;
-
-  // Data
+  // 
+  std::string content;
   QString file_name;
   QString file_type;
   QString current_directory;

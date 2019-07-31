@@ -11,14 +11,13 @@ namespace cmp {
 class Highlighter
 {
 public:
-  Highlighter(QString filetype, QString theme);
-  ~Highlighter();
+  Highlighter();
+  virtual ~Highlighter() = default;
 
 private:
   // Syntax loading
-  void setup_highlighter(QString file_type, QString theme);
-  void set_color_values(QString theme);
-  void set_theme(QString file_type, QString theme);
+  void (QString file_type);
+  void set_theme(Theme theme);
   void set_compiled_language_rules();
   void set_scripting_language_rules();
   void set_markup_language_rules();
@@ -28,14 +27,8 @@ private:
   void highlight_block(const QString& text);
 
 
-  // Data
-  struct Highlighter_rule
-  {
-    QRegExp pattern;
-    QTextCharFormat format;
-  };
-
   QVector<Highlighter_rule> highlighting_rules
+  Highlighter_rule rule;
 
   // Expression
   QRegExp exp_start;
@@ -67,18 +60,4 @@ private:
   QStringList scripting_languages;
   QStringList markup_languages;
 
-  // Highlighter
-  QColor keyword_color;
-  QColor keyword_color2;
-  QColor functions_color;
-  QColor value_color;
-  QColor number_color;
-  QColor operator_color;
-  QColor string_color;
-  QColor comment_color;
-  QColor variable_color;
-  QColor tab_color;
-  QColor html_attribute_color;
-  QColor css_classes_ids_color;
-  QColor css_attribute_color;
 };

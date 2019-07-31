@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"xstring": "cpp",
+			"bitset": "cpp",
+			"chrono": "cpp",
+			"xhash": "cpp",
+			"xtree": "cpp",
+			"xutility": "cpp",
+			"qbuffer": "cpp"
+		}
+	}
+}
