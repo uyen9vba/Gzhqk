@@ -14,7 +14,7 @@ enum class TabType {
 };
 Q_ENUM(TabType)
 
-enum class StyleComponents {
+enum class SyntaxComponents {
     k_default = 0,
     k_comment = 1,
     k_number = 2,
@@ -38,7 +38,11 @@ enum class StyleComponents {
     k_scintillaIndentGuide = 1005,
     k_scintillaUrlHighlight = 1006,
     k_scintillaOccurencesHighlight = 1007,
-    
+    k_scintillaCallTip = 1008,
+    k_scintillaFoldDisplayText = 1009,
+    k_scintillaPaper = 1010,
+    k_scintillaCurrentLine = 1011,
+    k_scintillaEdge = 1012
 };
 Q_ENUM(StyleComponents)
 
