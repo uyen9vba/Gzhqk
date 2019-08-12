@@ -39,7 +39,7 @@ public:
 
 public slots:
     void SaveAs(bool& ok, const QString& encoding = QString()); // pending
-    void Save()
+    void Save();
 
     void CloseEditor(bool& ok);
 

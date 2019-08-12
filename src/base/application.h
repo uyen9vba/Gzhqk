@@ -14,6 +14,7 @@
 #include <QIcon>
 
 class Application :
+public QApplication,
 public QObject {
 public:
     explicit Application(int& argc, char** argv);

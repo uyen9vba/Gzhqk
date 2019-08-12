@@ -11,5 +11,7 @@ public:
     virtual ~MessageBox() = default;
 
 public:
-    void SetIcon(Icon icon);
+    void SetIcon(QMessageBox::Icon icon);
+    static void SetCheckBox(QMessageBox* messageBox, const QString& text, bool* data);
+    
 };

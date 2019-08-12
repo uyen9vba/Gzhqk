@@ -10,24 +10,6 @@
 #include <QString>
 #include <QFontMetrics>
 
-struct SyntaxTheme
-{
-    QColor lineColor;
-    QColor keywordColor;
-    QColor keywordColor2;
-    QColor functionColor;
-    QColor valueColor;
-    QColor numberColor;
-    QColor operatorColor;
-    QColor stringColor;
-    QColor commentColor;
-    QColor variableColor;
-    QColor tabColor;
-    QColor htmlAttributeColor;
-    QColor cssAttributeColor;
-    QColor cssClassIdColor;
-};
-
 class Theme :
 public QObject {
 public:
